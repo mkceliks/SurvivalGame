@@ -82,6 +82,10 @@ public class MouseLook : MonoBehaviour
 
         current_Roll_Angle =
             Mathf.Lerp(current_Roll_Angle, Input.GetAxisRaw(MouseAxis.MOUSE_X) * roll_Angle, Time.deltaTime * roll_Speed);
+
+        lookRoot.localRotation = Quaternion.Euler(look_Angles.x, 0f, current_Roll_Angle);
+        playerRoot.localRotation = Quaternion.Euler(0f, look_Angles.y, 0f);
+
     }// look around
 
 }// class
